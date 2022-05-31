@@ -25,11 +25,9 @@ with open(os.path.join(here, 'CHANGELOG.md')) as _file:
     CHANGELOG = _file.read()
 
 about_text = (
-    'Coming soon.',
-    'I promise.'
+    'Unofficial Python SDK wrapper for Henrik\'s Unofficial Valorant API (https://docs.henrikdev.xyz/valorant.html).',
+    'Connect with the community on Discord at https://discord.com/invite/X3GaVkX2YN'
 )
-
-print('FIND_ME: ' + ','.join(REQUIREMENTS))
 
 setup(
     name='unofficial-valorant-api-py',
