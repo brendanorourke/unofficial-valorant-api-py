@@ -33,8 +33,6 @@ setup(
     name='unofficial-valorant-api-py',
     version=__version__,
     description='Python SDK for Henrik Dev Unofficial Valorant API (https://docs.henrikdev.xyz/valorant.html)',
-    long_description=about_text + README + CHANGELOG,
-    long_description_type='text/markdown',
     author='brendanorourke',
     url='https://github.com/brendanorourke/unofficial-valorant-api-py',
     classifiers=[
