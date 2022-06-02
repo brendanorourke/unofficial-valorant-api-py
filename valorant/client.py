@@ -46,12 +46,12 @@ class UnofficialValorantAPI(object):
     def get_account_data(self, name, tag):
         """ Get general account data like puuid and account level. """
         path = self._base_url + ValorantAPIPaths.ACCOUNT_DATA.format(name=encode_uri(name), tag=encode_uri(tag))
-        return self._get(path)
+        return self._get(path).json()
     
     def get_mmr_data(self, name, tag):
         """ Get mmr data about an user like current tier and last mmr change. """
         path = self._base_url + ValorantAPIPaths.MMR_DATA.format(name=encode_uri(name), tag=encode_uri(tag))
-        return self._get(path)
+        return self._get(path).json()
     
     def get_mmr_data_by_puuid(self, region, puuid, filter=None):
         """ Get mmr data about an user like current tier and last mmr change. """
@@ -69,7 +69,7 @@ class UnofficialValorantAPI(object):
 
         path = self._base_url + ValorantAPIPaths.MMR_DATA_BY_PUUID.format(region=region, puuid=puuid)
         
-        return self._get(path, {'filter': filter})
+        return self._get(path, {'filter': filter}).json()
     
     def get_mmr_history(self, region, name, tag):
         """ Get MMR History of the last competitive matches. """
@@ -81,7 +81,7 @@ class UnofficialValorantAPI(object):
                                                                     name=encode_uri(name),
                                                                     tag=encode_uri(tag))
         
-        return self._get(path)
+        return self._get(path).json()
     
     def get_mmr_history_by_puuid(self, region, puuid):
         """ Get mmr data about an user like current tier and last mmr change. """
@@ -94,7 +94,7 @@ class UnofficialValorantAPI(object):
             return None
         
         path = self._base_url + ValorantAPIPaths.MMR_HISTORY_BY_PUUID.format(region=region, puuid=puuid)
-        return self._get(path)
+        return self._get(path).json()
 
     def get_match_history(self, region, name, tag):
         """ Returns the last 5 matches that where played by this user. """
@@ -105,7 +105,7 @@ class UnofficialValorantAPI(object):
         path = self._base_url + ValorantAPIPaths.MATCH_HISTORY.format(region=region,
                                                                         name=encode_uri(name),
                                                                         tag=encode_uri(tag))
-        return self._get(path)
+        return self._get(path).json()
 
     def get_match_history_by_puuid(self, region, puuid):
         """ Returns the last 5 matches that where played by this user. """
@@ -118,12 +118,12 @@ class UnofficialValorantAPI(object):
             return None
 
         path = self._base_url + ValorantAPIPaths.MATCH_HISTORY_BY_PUUID.format(region=region, puuid=puuid)
-        return self._get(path)
+        return self._get(path).json()
     
     def get_match_data(self, match_id):
         """ Returns match data for a specific match. """
         path = self._base_url + ValorantAPIPaths.MATCH_DATA.format(match_id=match_id)
-        return self._get(path)
+        return self._get(path).json()
     
     def get_website_articles(self, country_code, filter=None):
         """ Get website articles based on your country code. """
@@ -141,7 +141,7 @@ class UnofficialValorantAPI(object):
             self._logger.warning(enums.Errors.INVALID_FILTER.format(filter))
             params = {}
 
-        return self._get(path, params)
+        return self._get(path, params).json()
 
     def get_leaderboard(self, region, name=None, tag=None):
         """ Returns leaderboard data for the given region. """
@@ -156,7 +156,7 @@ class UnofficialValorantAPI(object):
         else:
             params = {}
 
-        return self._get(path, params)
+        return self._get(path, params).json()
 
     def get_server_status(self, region):
         """ Returns server status for the given region. """
@@ -165,19 +165,19 @@ class UnofficialValorantAPI(object):
             return None
         
         path = self._base_url + ValorantAPIPaths.SERVER_STATUS.format(region=region)
-        return self._get(path)
+        return self._get(path).json()
 
     def get_content(self):
         """ Returns Ingame Content. """
         path = self._base_url + ValorantAPIPaths.CONTENT
-        return self._get(path)
+        return self._get(path).json()
 
     def get_store_offers(self):
         """ Returns all available store offers. """
         path = self._base_url + ValorantAPIPaths.STORE_OFFERS
-        return self._get(path)
+        return self._get(path).json()
     
     def get_store_featured(self):
         """ Returns the featured ingame shop offers. """
         path = self._base_url + ValorantAPIPaths.STORE_FEATURED
-        return self._get(path)
+        return self._get(path).json()
