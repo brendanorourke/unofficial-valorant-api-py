@@ -1,4 +1,6 @@
 # unofficial-valorant-api (v.0.0.1)
+:warning: This is *very* much a work in progress. Use at your discretion.
+
 Unofficial Python SDK for the Unofficial Valorant API from HenrikDev (https://docs.henrikdev.xyz/valorant.html).
 
 Pending distribution on PYPI.
